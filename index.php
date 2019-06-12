@@ -277,6 +277,10 @@ class="liP" href="https://techolympics.org/">TechOlympics 2018.</a></p>
                           <p class="liP">Jane Goodall's Roots and Shoots
 Foundation provided us with us with a grant towards our project.</p>
                         </li>
+                        <li>
+                          <a class="sponsorTitle" href="https://www.geckotek.co/">GeckoTek</a>
+                          <p class="liP">GeckoTek has provided us with some of their EZ-STIK build surfaces, which has done a great job of helping our prints stick</p>
+                        </li>
                       </ul>
                       <style>
                         .sponsorTitle {

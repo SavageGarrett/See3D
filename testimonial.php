@@ -89,8 +89,8 @@
         </div>
     </header>
 
-  <!-- Model Request -->
-	<section id="model-request" class="container content-section text-center reset-top-padding">
+
+	<section class="container content-section text-center reset-top-padding">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
               <h1>Testimonials</h1>
