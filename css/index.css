@@ -321,3 +321,7 @@ a:focus {
         all: unset;
     }
 }
+
+.testimony {
+	padding-bottom: 50px;
+}

@@ -2,3 +2,5 @@ php.ini
 .DS_Store
 error_log
 submit.php
+node_modules
+package-lock.json

@@ -25,7 +25,6 @@
   	<!-- Added CSS -->
   	<link href="css/index.css" rel="stylesheet">
   	<link href="css/slides.css" rel="stylesheet">
-    <link href="css/request.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +44,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="./index.php">
                     <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                 </a>
             </div>
@@ -94,18 +93,65 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
               <h1>Testimonials</h1>
-              <p class="readLess">"See3D has been a wonderful and valuable resource for my students who are blind and visually impaired.
-                They absolutely love the tactual models of their favorite movie characters such as R2D2 from Star Wars and the Minions."</p>
-              <p class="readMore" style="display: none;">"See3D has been a wonderful and valuable resource for my students who are blind and visually impaired.
-                They absolutely love the tactual models of their favorite movie characters such as R2D2 from Star Wars and the Minions.
-                My personal favorites are the butterflies and snowflakes.
-                It helps them to understand the intricate details in the many things we encounter.
-                I cannot thank See3D enough for the amazing tactile models they have provided to my students to help them “see” the world!"
-              </p>
-              <a class="read" href="javascript:changeTestimonialLength(0)" style="font-size: 20px;">Read More...</a>
-              <p>
-                -Mrs. Michelle Quinn, Teacher of the Visually Impaired (TVI) in Chicago
-              </p>
+                <div class="testimony">
+                  <p class="readLess">"See3D has been a wonderful and valuable resource for my students who are blind and visually impaired.
+                    They absolutely love the tactual models of their favorite movie characters such as R2D2 from Star Wars and the Minions."</p>
+                  <p class="readMore" style="display: none;">"See3D has been a wonderful and valuable resource for my students who are blind and visually impaired.
+                    They absolutely love the tactual models of their favorite movie characters such as R2D2 from Star Wars and the Minions.
+                    My personal favorites are the butterflies and snowflakes.
+                    It helps them to understand the intricate details in the many things we encounter.
+                    I cannot thank See3D enough for the amazing tactile models they have provided to my students to help them “see” the world!"
+                  </p>
+                  <a class="read" href="javascript:changeTestimonialLength(0)" style="font-size: 20px;">Read More...</a>
+                  <p>
+                    -Mrs. Michelle Quinn, Teacher of the Visually Impaired (TVI) in Chicago
+                  </p>
+                </div>
+                <hr>
+                <div class="testimony">
+                  <p class="readLess">"Short Description"</p>
+                  <p class="readMore" style="display: none;">"I first heard of See3D on Top Tech Tidbits.
+                    I needed a 3D model of the Yin/Yang symbol for a devotional I was writing, so I contacted Caroline.
+                    When I received the model, I became even more excited since with age and complete vision loss,
+                    I have begun to forget what certain things look like. Since then, I’ve requested models of a Moebius ring and a Klein bottle.
+                    These weird shapes are fascinating and I find myself exploring the model while my brain is busy doing its thing."
+                  </p>
+                  <a class="read" href="javascript:changeTestimonialLength(1)" style="font-size: 20px;">Read More...</a>
+                  <p>
+                    -Winslow Parker, Retired Adaptive Computer Trainer
+                  </p>
+                </div>
+                <hr>
+                <div class="testimony">
+                  <p class="readLess">"Short Description"</p>
+                  <p class="readMore" style="display: none;">“I had a vague idea what a castle looked like in terms of the base.
+                    The top and towers were completely new to me; I'd always heard of towers and castles but didn't imagine the towers were a part of the castle.
+                    I thought the third dimension looked like a triangle like houses do.  I also didn't know bridges were attached to castles.”
+                  </p>
+                  <a class="read" href="javascript:changeTestimonialLength(2)" style="font-size: 20px;">Read More...</a>
+                  <p>
+                    -Karen Arcos, M.S. Cognitive Neuroscience Ph.D. candidate, University of California Irvine From Los Angeles
+                  </p>
+                </div>
+                <hr>
+                <div class="testimony">
+                  <p class="readLess">"Short Description"</p>
+                  <div class="readMore" style="display: none;">
+                    <p>
+                      "My name is Rachel Hage, and I am an Assistive Technology instructor at the Lighthouse of Broward. I am blind, and needed a tactile representation of the different parts of the eye while studying for my AT certification.  My AT certification requires knowledge of many areas of study, including ocular conditions, light pathways into the eye, and a degree of medical terminology pertaining to the eye.  Although I recalled a degree of eye anatomy from high school (when I could still see), I wanted to feel the position of the cornea, iris, pupil, vitreous fluid, and so on.
+                    </p>
+                    <p>
+                      Upon listening to my weekly newsletter of Flying Blind, I stumbled upon See 3D.  I listened to a podcast describing the impetus of See 3D, and LOVED it!  I received a response from Caroline Karbowski via email, and she sent an wonderful 3D-printed eyeball with its parts along with braille labels attached.  In addition, Caroline provided a braille embossed guide explaining each of the labels on the eyeball for me to read along, and understand the single-lettered braille labels.
+                    </p>
+                    <p>
+                    This is a great organization, and I continue to promote it to other blind/visually impaired individuals to use as a source for learning tactilely.  I will also contact See 3D for further models in order to assist in my teaching abilities to represent content on a computer screen, smartphone, or any other concepts that cannot be seen by a blind individuals."
+                    </p>
+                  </div>
+                  <a class="read" href="javascript:changeTestimonialLength(3)" style="font-size: 20px;">Read More...</a>
+                  <p>
+                    -Rachel Hage, Assistive Technology Instructor, Lighthouse of Broward
+                  </p>
+                </div>
             </div>
         </div>
     </section>

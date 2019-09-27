@@ -46,7 +46,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="./index.php">
                     <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                 </a>
             </div>
@@ -62,6 +62,9 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#impact">Impact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#donors">Donors</a>
                     </li>
                 </ul>
             </div>
@@ -251,22 +254,21 @@
       </section>
 
       <!-- Sponsor -->
-      <section id="sponsors" class="content-section text-center section-padding-change">
+      <section id="donors" class="content-section text-center section-padding-change">
           <!-- <div class="download-section"> -->
               <div class="container">
                   <div class="col-lg-8 col-lg-offset-2">
-                      <h2>Sponsors and Grants</h2>
+                      <h2>Donors and Grants</h2>
                       <ul>
                         <li>
                           <a class="sponsorTitle" href="https://go.osu.edu/innovationstudio">OSU Innovation Studio</a>
-                          <p class="liP">The innovation studio has provided us with funding and guidance in expanding our project.</p>
+                          <p class="liP">The Innovation Studio has provided us with funding and guidance in expanding our project.</p>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://voraventures.com/">Vora Ventures</a>
                           <p class="liP">Vora Ventures <a class="liP" href="https://www.summitcds.org/communications/news/1633287/senior-wins-award-for-best-venture-pitch-at-techolympics">awarded</a>
-                             us with a grant for having the best venture
-pitch, at <a
-class="liP" href="https://techolympics.org/">TechOlympics 2018.</a></p>
+                             us with a grant for having the best venture pitch, at
+                          <a class="liP" href="https://techolympics.org/">TechOlympics 2018.</a></p>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://geaep.polar3d.com">Additive Education Program</a>
@@ -274,12 +276,17 @@ class="liP" href="https://techolympics.org/">TechOlympics 2018.</a></p>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://www.rootsandshoots.org/">Jane Goodall's Roots and Shoots</a>
-                          <p class="liP">Jane Goodall's Roots and Shoots
-Foundation provided us with us with a grant towards our project.</p>
+                          <p class="liP">Jane Goodall's Roots and Shoots Foundation provided us
+                            with us with a grant towards our project.</p>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://www.geckotek.co/">GeckoTek</a>
-                          <p class="liP">GeckoTek has provided us with some of their EZ-STIK build surfaces, which has done a great job of helping our prints stick</p>
+                          <p class="liP">GeckoTek has provided us with their EZ-STIK build surfaces,
+                            which have helped us print delicate models, and remove them easily.</p>
+                        </li>
+                        <li>
+                          <a class="sponsorTitle" href="https://ic3dprinters.com/">IC3D</a>
+                          <p class="liP">IC3D has provided us with a tremendous amount of filament, which we use for our prints.</p>
                         </li>
                       </ul>
                       <style>
