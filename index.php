@@ -259,34 +259,46 @@
               <div class="container">
                   <div class="col-lg-8 col-lg-offset-2">
                       <h2>Donors and Grants</h2>
-                      <ul>
+                      <ul class="donations">
                         <li>
                           <a class="sponsorTitle" href="https://go.osu.edu/innovationstudio">OSU Innovation Studio</a>
-                          <p class="liP">The Innovation Studio has provided us with funding and guidance in expanding our project.</p>
+                          <div>
+                            <p><a href="https://go.osu.edu/innovationstudio">The Innovation Studio</a> has provided us with funding and guidance in expanding our project.</p>
+                          </div>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://voraventures.com/">Vora Ventures</a>
-                          <p class="liP">Vora Ventures <a class="liP" href="https://www.summitcds.org/communications/news/1633287/senior-wins-award-for-best-venture-pitch-at-techolympics">awarded</a>
+                          <div>
+                          <p>Vora Ventures <a href="https://www.summitcds.org/communications/news/1633287/senior-wins-award-for-best-venture-pitch-at-techolympics">awarded</a>
                              us with a grant for having the best venture pitch, at
-                          <a class="liP" href="https://techolympics.org/">TechOlympics 2018.</a></p>
+                          <a href="https://techolympics.org/">TechOlympics 2018.</a></p>
+                          </div>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://geaep.polar3d.com">Additive Education Program</a>
-                          <p class="liP">GE's Additive Education grant was awarded to the <a class="liP" href="https://www.summitcds.org/communications/news/1171378/summit-juniors-project-earns-ge-grant-for-3d-printers-for-school">The Summit Country Day School</a>, to provide their school with 3D printers.</p>
+                          <div>
+                          <p>GE's Additive Education grant was awarded to the <a href="https://www.summitcds.org/communications/news/1171378/summit-juniors-project-earns-ge-grant-for-3d-printers-for-school">The Summit Country Day School</a>, to provide their school with 3D printers.</p>
+                          </div>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://www.rootsandshoots.org/">Jane Goodall's Roots and Shoots</a>
-                          <p class="liP">Jane Goodall's Roots and Shoots Foundation provided us
+                          <div>
+                          <p>Jane Goodall's Roots and Shoots Foundation provided us
                             with us with a grant towards our project.</p>
+                          </div>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://www.geckotek.co/">GeckoTek</a>
-                          <p class="liP">GeckoTek has provided us with their EZ-STIK build surfaces,
+                          <div>
+                          <p>GeckoTek has provided us with their EZ-STIK build surfaces,
                             which have helped us print delicate models, and remove them easily.</p>
+                          </div>
                         </li>
                         <li>
                           <a class="sponsorTitle" href="https://ic3dprinters.com/">IC3D</a>
-                          <p class="liP">IC3D has provided us with a tremendous amount of filament, which we use for our prints.</p>
+                          <div>
+                          <p>IC3D has provided us with a tremendous amount of filament, which we use for our prints.</p>
+                          </div>
                         </li>
                       </ul>
                       <style>
@@ -295,12 +307,14 @@
                           font-weight: normal;
                           font-family: Verdana, sans-serif;
                         }
-                        ul {
+                        .donations {
                           list-style-type: none;
                         }
-                        .liP {
+                        .donations li p, .donations li a {
                           font-size: 16px;
-                          margin-left: 10px;
+                        }
+                        .donations li div {
+                          margin-left: 20px;
                         }
                       </style>
             					<p></p>
@@ -316,16 +330,59 @@
         <div class="col-lg-8 col-lg-offset-2">
           <div class="article-padding longText"></div>
             <h2>Testimonials</h2>
-            <p>"See3D has been a wonderful and valuable resource for my students who are blind and visually impaired.
-              They absolutely love the tactual models of their favorite movie characters such as R2D2 from Star Wars and the Minions.
-              My personal favorites are the butterflies and snowflakes.
-              It helps them to understand the intricate details in the many things we encounter.
-              I cannot thank See3D enough for the amazing tactile models they have provided to my students to help them “see” the world!"
-            </p>
-            <p>
-              -Mrs. Michelle Quinn, Teacher of the Visually Impaired (TVI) in Chicago
-            </p>
-            <a href="./testimonial.php" style="font-size: 20px;">Read More...</a>
+            <div class="testimony">
+              <img style="float: left;" src="./img_refactor/snowflake_cropped.jpg" alt="Snowflake 3D Models">
+              <h3>Michelle Quinn</h3>
+              <p>Teacher of the Visually Impaired (TVI) in Chicago</p>
+              <a href="./testimonies/michellequinn.php">Read Testimony...</a>
+            </div>
+
+            <div style="clear: left;"></div>
+
+            <div class="testimony">
+              <img style="float: left;" src="./img_refactor/klein_bottle_cropped.jpg" alt="Klein Bottle 3D Model">
+              <h3>Winslow Parker</h3>
+              <p>Retired Adaptive Computer Trainmer</p>
+              <a href="./testimonies/winslowparker.php">Read Testimony...</a>
+            </div>
+
+            <div style="clear: left;"></div>
+
+            <div class="testimony">
+              <img style="float: left;" src="./img_refactor/karen_cropped.jpg" alt="Karen Arcos">
+              <h3>Karen Arcos</h3>
+              <p>M.S. Cognitive Neuroscience Ph.D. candidate, University of California Irvine From Los Angeles</p>
+              <a href="./testimonies/karenarcos.php">Read Testimony...</a>
+            </div>
+
+            <div style="clear: left;"></div>
+
+            <div class="testimony">
+              <img style="float: left;" src="./img_refactor/rachel_cropped.jpg" alt="Rachel Hage">
+              <h3>Rachel Hage</h3>
+              <p>Assistive Technology Instructor, Lighthouse of Broward</p>
+              <a href="./testimonies/rachelhage.php">Read Testimony...</a>
+            </div>
+
+            <div style="clear: left"></div>
+
+            <style>
+              .testimony img {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 50px;
+                margin-right: 20px;
+              }
+              .testimony h3 {
+                padding-top: 40px;
+              }
+              .testimony h3, .testimony p {
+                margin-bottom: 10px;
+              }
+              .testimony a{
+                font-size: 20px;
+              }
+            </style>
           </div>
       </div>
     </section>
