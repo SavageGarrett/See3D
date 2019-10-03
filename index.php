@@ -340,7 +340,7 @@
             <div style="clear: left;"></div>
 
             <div class="testimony">
-              <img style="float: left;" src="./img_refactor/klein_bottle_cropped.jpg" alt="Klein Bottle 3D Model">
+              <img style="float: left;" src="./img_refactor/klein_bottle2_cropped.jpg" alt="Klein Bottle 3D Model">
               <h3>Winslow Parker</h3>
               <p>Retired Adaptive Computer Trainmer</p>
               <a href="./testimonies/winslowparker.php">Read Testimony...</a>
