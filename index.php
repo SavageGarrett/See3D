@@ -111,7 +111,7 @@
 						<div class="mySlides">
               <div class="slide-image-box">
   						  <img alt="3D model of the United States Capitol Building"
-                  src="img_refactor/Capitol_Building.JPG" style="
+                  src="img_refactor/Capitol_Building.jpg" style="
                   display: block;
     							margin-left: auto;
     							margin-right: auto;
@@ -122,7 +122,7 @@
 						<div class="mySlides">
               <div class="slide-image-box">
   						  <img alt="random 3D models see3d has printed"
-                  src="img_refactor/See3D_banner.JPG" style="
+                  src="img_refactor/See3D_banner.jpg" style="
                   display: block;
     							margin-left: auto;
     							margin-right: auto;
