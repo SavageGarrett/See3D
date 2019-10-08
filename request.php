@@ -152,7 +152,7 @@
                         <!-- STL File Field -->
                         <div class="form-group">
                             <label for="stlUpload">
-                                <h5 style="margin: 0;">Stl File (optional)</h5></label>
+                                <h5 style="margin: 0;">Description of Desired Model (or link to STL )</h5></label>
                             <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100">
                         </div>
 
@@ -186,8 +186,8 @@
 
                         <!-- Submit Button -->
                         <div class="button-box">
-                            <a class="btn btn-default btn-lg" href="javascript:submit()">Submit</a>
-                            <input style="display:none;" id="submit" type="submit" href="#" class="btn btn-default btn-lg" disabled>
+                            <!-- <a class="btn btn-default btn-lg" href="javascript:submit()">Submit</a> -->
+                            <input id="submit" type="submit" class="btn btn-default btn-lg">
                         </div>
                     </form>
                 </div>

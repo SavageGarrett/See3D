@@ -2,6 +2,8 @@
 // TODO Submitted Message
 
 // Get post variables
+$date = date('m/d/Y h:i:s a', time());
+$completed = 0;
 $name = $_POST['usr'];
 $email = $_POST['email'];
 $address1 = $_POST['address1'];
@@ -17,7 +19,7 @@ $understand = $_POST['understand'];
 $publicity = $_POST['publicity'];
 
 // Convert Input
-$address = $address1 . " " . $address2 . " " . $city . " " . 
+$address = $address1 . " " . $address2 . " " . $city . " " .
 $state . " " . $zipcode;
 $braille = 0; //checkbox
 if(strcmp($checkbox,"on") == 0) {
@@ -25,7 +27,7 @@ if(strcmp($checkbox,"on") == 0) {
 }
 
 // Establish MySql Connection
-$link = mysqli_connect("localhost", "see3d_bot", 
+$link = mysqli_connect("127.0.0.1", "bot",
 "b0t34l98hgBrn", "see3d_formSubmits");
 if(!$link){
   echo "Error: Unable to connect to MySQL." . PHP_EOL;
@@ -34,21 +36,28 @@ if(!$link){
   exit;
 }
 
-// Send Post Variables to Database
-$insert = "INSERT INTO form_submits 
-  (name, email, address, braille_label, stl_file, 
-  size, considerations, understand, how_found)
-  VALUES
-  ('".$name."', '".$email."', '".$address."', '".$braille."', 
-  '".$stlLink."', '".$modelSize."', '".$considerations."', 
-  '".$understand."', '".$publicity."')";
+// Insert into Working Table
+if($submit = $link -> prepare("INSERT INTO form_submits
+  (date, completed, name, email, address, label, stl_file,
+  model_size, considerations, understand, how_found)
+  VALUES(?,?,?,?,?,?,?,?,?,?,?)")) {
+  $submit -> bind_param("sisssisssss", $date, $completed,
+    $name, $email, $address, $braille, $stlLink, $modelSize,
+    $considerations, $understand, $publicity);
+  $submit -> execute();
+}
 
-if(mysqli_query($link, $insert)) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $insert . "<br>" . mysqli_error($link);
+// Insert into Permanent Table
+if($submit = $link -> prepare("INSERT INTO form_submits_permanent
+  (date, completed, name, email, address, label, stl_file,
+  model_size, considerations, understand, how_found)
+  VALUES(?,?,?,?,?,?,?,?,?,?,?)")) {
+  $submit -> bind_param("sisssisssss", $date, $completed,
+    $name, $email, $address, $braille, $stlLink, $modelSize,
+    $considerations, $understand, $publicity);
+  $submit -> execute();
 }
 
 // Close Link
-mysqli_close($link);
+$link->close();
 ?>
