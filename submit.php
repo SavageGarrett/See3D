@@ -1,5 +1,6 @@
 <?php
-// TODO Submitted Message
+// DB Connection Vars
+include_once("constants.php");
 
 // Get post variables
 $date = date('m/d/Y h:i:s a', time());
@@ -27,8 +28,7 @@ if(strcmp($checkbox,"on") == 0) {
 }
 
 // Establish MySql Connection
-$link = mysqli_connect("127.0.0.1", "bot",
-"b0t34l98hgBrn", "see3d_formSubmits");
+$link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if(!$link){
   echo "Error: Unable to connect to MySQL." . PHP_EOL;
   echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
