@@ -15,7 +15,7 @@
 
 <head>
     <title>Admin Login</title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,10 +36,8 @@
     <!-- Added CSS -->
     <link href="css/index.css" rel="stylesheet">
     <link href="css/slides.css" rel="stylesheet">
-    <link href="css/request.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script src="js/slides.js"></script>
     <script type="text/JavaScript" src="js/sha512.js"></script>
     <script type="text/JavaScript" src="js/forms.js"></script>
 
@@ -96,7 +94,7 @@
                         echo '<p class="error">Error Logging In!</p>';
                     }
                     ?>
-                    <form id="" action="." method="post">
+                    <form id="" action="includes/process_login.php" method="post">
                         <!-- E-Mail Field -->
                         <div class="form-group">
                             <label for="email"><h5 style="margin: 0">E-Mail</h5></label>

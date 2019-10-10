@@ -29,10 +29,8 @@
     <!-- Added CSS -->
     <link href="css/index.css" rel="stylesheet">
     <link href="css/slides.css" rel="stylesheet">
-    <link href="css/request.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script src="js/slides.js"></script>
     <script type="text/JavaScript" src="js/sha512.js"></script>
     <script type="text/JavaScript" src="js/forms.js"></script>
 
@@ -90,6 +88,20 @@
                             echo $error_msg;
                         }
                        ?>
+                       <?php if (login_check($mysqli) == true) : ?>
+                       <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+                           <p>
+                               This is an example protected page.  To access this page, users
+                               must be logged in.  At some stage, we'll also check the role of
+                               the user, so pages will be able to determine the type of user
+                               authorised to access the page.
+                           </p>
+                           <p>Return to <a href="index.php">login page</a></p>
+                       <?php else : ?>
+                           <p>
+                               <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+                           </p>
+                       <?php endif; ?>
                       <h3>Register</h3>
                       <!-- E-Mail Field -->
                       <div class="form-group">
@@ -101,19 +113,19 @@
                         <div class="form-group">
                             <label for="usr">
                                 <h5 style="margin: 0">Username</h5></label>
-                            <input type="text" class="form-control" placeholder="Username" id="usr" name="username" maxlength="100">
+                            <input type="text" class="form-control" placeholder="Username" id="username" name="username" maxlength="100">
                         </div>
                         <!-- Password Field -->
                         <div class="form-group">
                             <label for="email">
                                 <h5 style="margin: 0">Password</h5></label>
-                            <input type="password" class="form-control" placeholder="Password" id="email" name="password" maxlength="64">
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="64">
                         </div>
                         <!-- Repeat Password Field -->
                         <div class="form-group">
                             <label for="email">
                                 <h5 style="margin: 0">Repeat Password</h5></label>
-                            <input type="password" class="form-control" placeholder="Password" id="email" name="confirmpwd" maxlength="64">
+                            <input type="password" class="form-control" placeholder="Password" id="confirmpwd" name="confirmpwd" maxlength="64">
                         </div>
 
                         <!-- Submit Button -->
