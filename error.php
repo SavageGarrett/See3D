@@ -1,26 +1,22 @@
 <?php
-  include_once 'includes/db_connect.php';
-  include_once 'includes/functions.php';
+$error = filter_input(INPUT_GET, 'err', $filter = FILTER_SANITIZE_STRING);
 
-  sec_session_start();
-
-  if (login_check($mysqli) == true) {
-      $logged = 'in';
-  } else {
-      $logged = 'out';
-  }
- ?>
+if (! $error) {
+    $error = 'Oops! An unknown error happened.';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Admin Login</title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <title>Error</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -40,8 +36,6 @@
 
     <!-- Added Scripts -->
     <script src="js/slides.js"></script>
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
 
 </head>
 
@@ -91,31 +85,7 @@
         <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <?php
-                    if (isset($_GET['error'])) {
-                        echo '<p class="error">Error Logging In!</p>';
-                    }
-                    ?>
-                    <form id="" action="." method="post">
-                        <!-- E-Mail Field -->
-                        <div class="form-group">
-                            <label for="email"><h5 style="margin: 0">E-Mail</h5></label>
-                            <input type="email" class="form-control" placeholder="Username" id="usr" name="email" maxlength="100">
-                        </div>
-                        <!-- Password Field -->
-                        <div class="form-group">
-                            <label for="password"><h5 style="margin: 0">Password</h5></label>
-                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="64">
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="button-box">
-                          <input  class="btn btn-default btn-lg"
-                                  type="button"
-                                  value="Login"
-                                  onclick="formhash(this.form, this.form.password);" />
-                        </div>
-                    </form>
+                    <h1>Error: <?php echo $error; ?></h1>
                 </div>
             </div>
         </section>

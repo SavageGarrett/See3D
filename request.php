@@ -90,6 +90,11 @@
         <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
+                  <?php
+                  if (isset($_GET['error'])) {
+                      echo '<p class="error">Error Logging In!</p>';
+                  }
+                  ?> 
                     <!-- Model Request Text -->
                     <h2 class="transform-reset">Request a Model Today</h2>
                     <h4 class="transform-reset">Click <a href="#">here</a> for instructions and information on requesting a model.</h4>
