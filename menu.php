@@ -1,26 +1,21 @@
 <?php
-  include_once 'includes/db_connect.php';
+  include_once 'includes/register.inc.php';
   include_once 'includes/functions.php';
 
   sec_session_start();
-
-  if (login_check($mysqli) == true) {
-      $logged = 'in';
-  } else {
-      $logged = 'out';
-  }
  ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Submission Edit</title>
+    <title>See3D</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -36,10 +31,8 @@
     <!-- Added CSS -->
     <link href="css/index.css" rel="stylesheet">
     <link href="css/slides.css" rel="stylesheet">
-    <link href="css/request.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script src="js/slides.js"></script>
     <script type="text/JavaScript" src="js/sha512.js"></script>
     <script type="text/JavaScript" src="js/forms.js"></script>
 
@@ -62,10 +55,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
+                        <li>
+                            <a class="page-scroll" href="./includes/logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -87,24 +78,26 @@
             </div>
         </header>
 
+        <!-- Model Request -->
         <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                  <h5>Form Submits</h5>
-                  <?php if (login_check($mysqli) == true) : ?>
-                  <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-                      <p>
-                          This is an example protected page.  To access this page, users
-                          must be logged in.  At some stage, we'll also check the role of
-                          the user, so pages will be able to determine the type of user
-                          authorised to access the page.
-                      </p>
-                      <p>Return to <a href="index.php">login page</a></p>
-                  <?php else : ?>
-                      <p>
-                          <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
-                      </p>
-                  <?php endif; ?>
+                  <?php
+                    if (!empty($error_msg)) {
+                        echo $error_msg;
+                    }
+                   ?>
+                   <?php if (login_check($mysqli) == true) : ?>
+                   <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+                   <h1>Menu</h1>
+                   <p><a href="./register.php">Register</a> New User</p>
+                   <p><a href="./table.php">Request</a> Table</p>
+                   <?php else : ?>
+                       <p>
+                           <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+                       </p>
+                   <?php endif; ?>
+
                 </div>
             </div>
         </section>

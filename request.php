@@ -54,18 +54,11 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
-                        <!-- About Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#about">About</a>
-                        </li>
-                        <!-- Volunteer Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#volunteer">Volunteer</a>
-                        </li>
-                        <!-- Impact Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#impact">Impact</a>
-                        </li>
+                        <?php if (login_check($mysqli) == true) : ?>
+                          <li>
+                              <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                          </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -94,7 +87,7 @@
                   if (isset($_GET['error'])) {
                       echo '<p class="error">Error Logging In!</p>';
                   }
-                  ?> 
+                  ?>
                     <!-- Model Request Text -->
                     <h2 class="transform-reset">Request a Model Today</h2>
                     <h4 class="transform-reset">Click <a href="#">here</a> for instructions and information on requesting a model.</h4>

@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * Copyright (C) 2013 peredur.net
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,3 +24,4 @@ if ($mysqli->connect_error) {
     header("Location: ../error.php?err=Unable to connect to MySQL");
     exit();
 }
+?>

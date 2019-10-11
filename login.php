@@ -61,10 +61,11 @@
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
                         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        </li>
+                        <?php if (login_check($mysqli) == true) : ?>
+                          <li>
+                              <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                          </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -114,6 +115,8 @@
                                   onclick="formhash(this.form, this.form.password);" />
                         </div>
                     </form>
+                    <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
+                    <p>You are currently logged <?php echo $logged ?>.</p>
                 </div>
             </div>
         </section>

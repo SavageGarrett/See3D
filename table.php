@@ -89,45 +89,7 @@
                    ?>
                    <?php if (login_check($mysqli) == true) : ?>
                    <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-                   <form name="registration_form" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post">
-                     <h3>Register</h3>
-                     <!-- E-Mail Field -->
-                     <div class="form-group">
-                         <label for="email">
-                             <h5 style="margin: 0">E-Mail</h5></label>
-                         <input type="text" class="form-control" placeholder="E-Mail" id="email" name="email" maxlength="64">
-                     </div>
-                       <!-- Username Field -->
-                       <div class="form-group">
-                           <label for="usr">
-                               <h5 style="margin: 0">Username</h5></label>
-                           <input type="text" class="form-control" placeholder="Username" id="username" name="username" maxlength="100">
-                       </div>
-                       <!-- Password Field -->
-                       <div class="form-group">
-                           <label for="email">
-                               <h5 style="margin: 0">Password</h5></label>
-                           <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="64">
-                       </div>
-                       <!-- Repeat Password Field -->
-                       <div class="form-group">
-                           <label for="email">
-                               <h5 style="margin: 0">Repeat Password</h5></label>
-                           <input type="password" class="form-control" placeholder="Password" id="confirmpwd" name="confirmpwd" maxlength="64">
-                       </div>
-
-                       <!-- Submit Button -->
-                       <div class="button-box">
-                         <input  class="btn btn-default btn-lg"
-                                 type="button"
-                                 value="Register"
-                                 onclick="return regformhash(this.form,
-                                                this.form.username,
-                                                this.form.email,
-                                                this.form.password,
-                                                this.form.confirmpwd);" />
-                       </div>
-                   </form>
+                   <h1>Form Submits</h1>
                    <div class="button-box">
                      <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
                    </div>

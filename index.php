@@ -66,6 +66,11 @@
                     <li>
                         <a class="page-scroll" href="#donors">Donors</a>
                     </li>
+                    <?php if (login_check($mysqli) == true) : ?>
+                      <li>
+                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                      </li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
