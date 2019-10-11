@@ -1,8 +1,6 @@
 <?php
   include_once 'includes/register.inc.php';
   include_once 'includes/functions.php';
-  include_once './includes/db_connect_form.php';
-  include_once './includes/process_table.php';
 
   sec_session_start();
  ?>
@@ -80,31 +78,47 @@
             </div>
         </header>
 
-        <!-- Model Request -->
-        <section id="model-request" class="container content-section text-center reset-top-padding">
+        <?php
+          if (!empty($error_msg)) {
+              echo $error_msg;
+          }
+         ?>
+         <?php if (login_check($mysqli) == true) : ?>
+          <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <?php
-                    if (!empty($error_msg)) {
-                        echo $error_msg;
-                    }
-                   ?>
-                   <?php if (login_check($mysqli) == true) : ?>
-                   <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-                   <h1>Form Submits</h1>
-
-                   <div class="button-box">
-                     <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
-                   </div>
-                   <?php else : ?>
-                       <p>
-                           <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
-                       </p>
-                   <?php endif; ?>
-
-                </div>
+              <div class="col-lg-8 col-lg-offset-2">
+                <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+                <h1>Form Submits</h1>
+              </div>
             </div>
-        </section>
+          </section>
+         <?php
+          include_once './includes/process_table.php';
+          ?>
+          <style>
+            table, th, td {
+              border: 2px solid white;
+            }
+            td {
+              text-align: center;
+              vertical-align: middle;
+            }
+            .btn-default {
+              float: none;
+            }
+          </style>
+          <script type="text/javascript">
+            function deleteSelected() {
+              
+            }
+          </script>
+          <a class="btn btn-default btn-lg" id="save" onclick="deleteSelected()">Save</a>
+          <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
+         <?php else : ?>
+             <p>
+                 <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+             </p>
+         <?php endif; ?>
 
         <!-- Footer -->
         <footer>
