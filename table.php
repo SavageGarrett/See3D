@@ -1,6 +1,8 @@
 <?php
   include_once 'includes/register.inc.php';
   include_once 'includes/functions.php';
+  include_once './includes/db_connect_form.php';
+  include_once './includes/process_table.php';
 
   sec_session_start();
  ?>
@@ -90,6 +92,7 @@
                    <?php if (login_check($mysqli) == true) : ?>
                    <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
                    <h1>Form Submits</h1>
+
                    <div class="button-box">
                      <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
                    </div>
