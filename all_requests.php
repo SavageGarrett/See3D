@@ -88,14 +88,14 @@
             <div class="row">
               <div id="page-top-text" class="col-lg-8 col-lg-offset-2">
                 <h1>Form Submits</h1>
-                <p><a href="all_requests.php">All Requests</a></p>
+                <p><a href="table.php">Current Requests</a></p>
               </div>
             </div>
           </section>
          <?php
           // Get Form Submits from Database
           include_once './includes/process_table.php';
-          getRequests($mysqli, "form_submits", 25);
+          getRequests($mysqli, "form_submits_permanent", 50);
           ?>
           <style>
             table, th, td {
@@ -111,12 +111,6 @@
           </style>
           <form class="" action="./includes/process_table_change.php" method="post">
             <div class="button-box" style="position: absolute;">
-              <input  id="save"
-                      class="btn btn-default btn-lg"
-                      type="button"
-                      value="Save"
-                      onclick="formhash_delete(this.form);" />
-              <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
             </div>
           </form>
 

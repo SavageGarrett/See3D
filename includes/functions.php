@@ -109,6 +109,35 @@ function login($email, $password, $mysqli) {
     }
 }
 
+function delete_entries($to_delete, $mysqli) {
+    for ($i = 0; $i < count($to_delete); $i++) {
+      // Insert into Working Table
+      if ($insert = $mysqli -> prepare("DELETE from form_submits
+                            WHERE date = ?")) {
+        $insert -> bind_param('s', $to_delete[$i]);
+        $insert -> execute();
+      } else {
+          // Could not create a prepared statement
+          header("Location: ../error.php?err=Database error: cannot prepare delete statement");
+          exit();
+      }
+
+      // Update Permanent table
+      if ($update = $mysqli -> prepare("UPDATE form_submits_permanent
+                                        SET completed = 1
+                                        WHERE date = ?")) {
+        // Update completed field
+        $update -> bind_param('s', $to_delete[$i]);
+        $update -> execute();
+      } else {
+        // Could not create a prepared statement
+        header("Location: ../error.php?err=Database error: cannot prepare update statement");
+        exit();
+      }
+    }
+    return true;
+  }
+
 function checkbrute($user_id, $mysqli) {
     // Get timestamp of current time
     $now = time();

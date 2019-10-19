@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (C) 2013 peredur.net
  *
@@ -17,12 +16,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-include_once 'psl-config.php';   // Needed because functions.php is not included
+include_once 'db_connect_form.php';
+include_once 'functions.php';
 
-// Connect
-$mysqli = new mysqli(HOST, USER, PASSWORD, "see3d_formSubmits");
-if ($mysqli->connect_error) {
-    header("Location: ../error.php?err=Unable to connect to MySQL");
+sec_session_start(); // Our custom secure way of starting a PHP session.
+
+if (isset($_POST['date'])) {
+    if (delete_entries($_POST['date'], $mysqli) == true) {
+        // Login success
+        header("Location: ../table.php");
+        echo "Deletion Success!";
+        exit();
+    } else {
+        // Login failed
+        header('Location: ../table.php?error=1');
+        exit();
+    }
+} else {
+    // The correct POST variables were not sent to this page.
+    header('Location: ../error.php?err=Could not process POST variables');
     exit();
 }
 ?>

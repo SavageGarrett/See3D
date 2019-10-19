@@ -86,7 +86,7 @@
             </div>
         </header>
 
-        <!-- Model Request -->
+        <!-- Login Form -->
         <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -112,7 +112,7 @@
                           <input  class="btn btn-default btn-lg"
                                   type="button"
                                   value="Login"
-                                  onclick="formhash(this.form, this.form.password);" />
+                                  onclick="formhash_login(this.form, this.form.password);" />
                         </div>
                     </form>
                     <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>

@@ -1,6 +1,4 @@
 <?php
-// DB Connection Vars
-include_once("constants.php");
 
 // Get post variables
 $date = date('m/d/Y h:i:s a', time());
@@ -28,16 +26,10 @@ if(strcmp($checkbox,"on") == 0) {
 }
 
 // Establish MySql Connection
-$link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if(!$link){
-  echo "Error: Unable to connect to MySQL." . PHP_EOL;
-  echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-  echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-  exit;
-}
+include_once('includes/db_connect_form.php');
 
 // Insert into Working Table
-if($submit = $link -> prepare("INSERT INTO form_submits
+if($submit = $mysqli -> prepare("INSERT INTO form_submits
   (date, completed, name, email, address, label, stl_file,
   model_size, considerations, understand, how_found)
   VALUES(?,?,?,?,?,?,?,?,?,?,?)")) {
@@ -48,7 +40,7 @@ if($submit = $link -> prepare("INSERT INTO form_submits
 }
 
 // Insert into Permanent Table
-if($submit = $link -> prepare("INSERT INTO form_submits_permanent
+if($submit = $mysqli -> prepare("INSERT INTO form_submits_permanent
   (date, completed, name, email, address, label, stl_file,
   model_size, considerations, understand, how_found)
   VALUES(?,?,?,?,?,?,?,?,?,?,?)")) {
@@ -59,5 +51,5 @@ if($submit = $link -> prepare("INSERT INTO form_submits_permanent
 }
 
 // Close Link
-$link->close();
+$mysqli->close();
 ?>

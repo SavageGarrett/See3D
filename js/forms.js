@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-function formhash(form, password) {
+function formhash_login(form, password) {
     // Create a new element input, this will be our hashed password field.
     var p = document.createElement("input");
 
@@ -24,9 +24,53 @@ function formhash(form, password) {
     p.name = "p";
     p.type = "hidden";
     p.value = hex_sha512(password.value);
-    
+
     // Make sure the plaintext password doesn't get sent.
     password.value = "";
+
+    // Finally submit the form.
+    form.submit();
+}
+
+function formhash_delete(form) {
+    let timestamp_elements = document.getElementsByClassName("timestamp");
+    let delete_model_elements = document.getElementsByClassName("delete_model");
+    let delete_models = [];
+    let itemCount = 0;
+    let model_checked = false;
+
+    // Extract Deletion Dates for Checked Entries
+    for (let i = 0; i < delete_model_elements.length; i++) {
+      if (delete_model_elements[i].checked == true) {
+        let p_date = document.createElement("input");
+        p_date.name = "date[" + itemCount + "]";
+        p_date.type = "hidden"
+        p_date.value = timestamp_elements[i].textContent;
+        delete_models.push(p_date);
+
+        itemCount++;
+        model_checked = true;
+      }
+    }
+
+    if(!model_checked) {
+      let no_model_checked = document.createElement("p");
+      no_model_checked.textContent = "No Model Checked to Delete";
+      document.getElementById('page-top-text').appendChild(no_model_checked);
+      return;
+    }
+    // Create a new element input, this will be our hashed password field.
+    let p = document.createElement("input");
+
+    // // Add the new element to our form.
+    // form.appendChild(p);
+    // p.name = "delete";
+    // p.type = "hidden";
+    // p.value = delete_models;
+
+    for (let j = 0; j < delete_models.length; j++) {
+      form.appendChild(delete_models[j]);
+    }
 
     // Finally submit the form.
     form.submit();
