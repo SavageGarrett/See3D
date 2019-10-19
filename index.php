@@ -1,3 +1,9 @@
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+
+sec_session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,6 +72,11 @@
                     <li>
                         <a class="page-scroll" href="#donors">Donors</a>
                     </li>
+                    <?php if (login_check($mysqli) == true) : ?>
+                      <li>
+                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                      </li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

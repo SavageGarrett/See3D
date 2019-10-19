@@ -56,6 +56,11 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <?php if (login_check($mysqli) == true) : ?>
+                      <li>
+                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                      </li>
+                    <?php endif; ?>
                     <!-- <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>

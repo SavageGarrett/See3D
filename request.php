@@ -1,3 +1,9 @@
+<?php
+  include_once 'includes/register.inc.php';
+  include_once 'includes/functions.php';
+
+  sec_session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,18 +60,11 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
-                        <!-- About Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#about">About</a>
-                        </li>
-                        <!-- Volunteer Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#volunteer">Volunteer</a>
-                        </li>
-                        <!-- Impact Header Button -->
-                        <li>
-                            <a class="page-scroll" href="#impact">Impact</a>
-                        </li>
+                        <?php if (login_check($mysqli) == true) : ?>
+                          <li>
+                              <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                          </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -90,6 +89,11 @@
         <section id="model-request" class="container content-section text-center reset-top-padding">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
+                  <?php
+                  if (isset($_GET['error'])) {
+                      echo '<p class="error">Error Logging In!</p>';
+                  }
+                  ?>
                     <!-- Model Request Text -->
                     <h2 class="transform-reset">Request a Model Today</h2>
                     <h4 class="transform-reset">Click <a href="#">here</a> for instructions and information on requesting a model.</h4>
@@ -152,7 +156,7 @@
                         <!-- STL File Field -->
                         <div class="form-group">
                             <label for="stlUpload">
-                                <h5 style="margin: 0;">Stl File (optional)</h5></label>
+                                <h5 style="margin: 0;">Description of Desired Model (or link to STL )</h5></label>
                             <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100">
                         </div>
 
@@ -186,8 +190,8 @@
 
                         <!-- Submit Button -->
                         <div class="button-box">
-                            <a class="btn btn-default btn-lg" href="javascript:submit()">Submit</a>
-                            <input style="display:none;" id="submit" type="submit" href="#" class="btn btn-default btn-lg" disabled>
+                            <!-- <a class="btn btn-default btn-lg" href="javascript:submit()">Submit</a> -->
+                            <input id="submit" type="submit" class="btn btn-default btn-lg">
                         </div>
                     </form>
                 </div>

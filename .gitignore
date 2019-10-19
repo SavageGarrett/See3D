@@ -1,6 +1,7 @@
 php.ini
 .DS_Store
 error_log
-submit.php
 node_modules
 package-lock.json
+constants.php
+includes/psl-config.php
