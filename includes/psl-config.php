@@ -28,10 +28,10 @@
 /**
  * These are the database login details
  */
-define("HOST", "127.0.01"); 			// The host you want to connect to.
-define("USER", "bot"); 			// The database username.
-define("PASSWORD", "b0t34l98hgBrn"); 	// The database password.
-define("DATABASE", "login");             // The database name.
+define("HOST", "localhost"); 			// The host you want to connect to.
+define("USER", "see3d_php"); 			// The database username.
+define("PASSWORD", "<l[?N0Rrm+9?D9O"); 	// The database password.
+define("DATABASE", "see3d_userBase");             // The database name.
 
 /**
  * Who can register and what the default role will be
@@ -54,4 +54,4 @@ define("DEFAULT_ROLE", "member");
  *
  * If you are using an HTTPS connection, change this to TRUE
  */
-define("SECURE", FALSE);    // For development purposes only!!!!
+define("SECURE", TRUE);    // For development purposes only!!!!
