@@ -345,7 +345,7 @@ sec_session_start();
               <img style="float: left;" src="./img_refactor/snowflake_cropped.jpg" alt="Snowflake 3D Models">
               <h3>Michelle Quinn</h3>
               <p>Teacher of the Visually Impaired (TVI) in Chicago</p>
-              <a href="./testimonies/michellequinn.php">Read Testimony...</a>
+              <a href="./pages/testimonies/michellequinn.php">Read Testimony...</a>
             </div>
 
             <div style="clear: left;"></div>
@@ -354,7 +354,7 @@ sec_session_start();
               <img style="float: left;" src="./img_refactor/klein_bottle2_cropped.jpg" alt="Klein Bottle 3D Model">
               <h3>Winslow Parker</h3>
               <p>Retired Adaptive Computer Trainmer</p>
-              <a href="./testimonies/winslowparker.php">Read Testimony...</a>
+              <a href="./pages/testimonies/winslowparker.php">Read Testimony...</a>
             </div>
 
             <div style="clear: left;"></div>
@@ -363,7 +363,7 @@ sec_session_start();
               <img style="float: left;" src="./img_refactor/karen_cropped.jpg" alt="Karen Arcos">
               <h3>Karen Arcos</h3>
               <p>M.S. Cognitive Neuroscience Ph.D. candidate, University of California Irvine From Los Angeles</p>
-              <a href="./testimonies/karenarcos.php">Read Testimony...</a>
+              <a href="./pages/testimonies/karenarcos.php">Read Testimony...</a>
             </div>
 
             <div style="clear: left;"></div>
@@ -372,7 +372,7 @@ sec_session_start();
               <img style="float: left;" src="./img_refactor/rachel_cropped.jpg" alt="Rachel Hage">
               <h3>Rachel Hage</h3>
               <p>Assistive Technology Instructor, Lighthouse of Broward</p>
-              <a href="./testimonies/rachelhage.php">Read Testimony...</a>
+              <a href="./pages/testimonies/rachelhage.php">Read Testimony...</a>
             </div>
 
             <div style="clear: left"></div>
@@ -408,8 +408,7 @@ sec_session_start();
                 <tr>
                   <th><a class="impactLink" href="https://blindabilities.com/?p=2957">Blind Abilities</a></th>
                   <th><a class="impactLink" href="https://m.youtube.com/watch?v=uf_Qw8mcMh0">TEDx Talk</a></th>
-                  <th><a class="impactLink"
-href="https://www.afb.org/aw/18/9/15174">AccessWorld</a></th>
+                  <th><a class="impactLink" href="https://www.afb.org/aw/18/9/15174">AccessWorld</a></th>
                 </tr>
               </table>
       				<div class="article-padding longText"></div>

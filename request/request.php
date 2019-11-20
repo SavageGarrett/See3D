@@ -1,6 +1,6 @@
 <?php
-  include_once 'includes/register.inc.php';
-  include_once 'includes/functions.php';
+  include_once '../includes/register.inc.php';
+  include_once '../includes/functions.php';
 
   sec_session_start();
  ?>
@@ -21,20 +21,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="../css/grayscale.min.css" rel="stylesheet">
 
     <!-- Added CSS -->
-    <link href="css/index.css" rel="stylesheet">
-    <link href="css/slides.css" rel="stylesheet">
-    <link href="css/request.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/slides.css" rel="stylesheet">
+    <link href="../css/request.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script src="js/slides.js"></script>
+    <script src="../js/slides.js"></script>
 
 </head>
 
@@ -48,7 +48,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="./index.php">
+                    <a class="navbar-brand page-scroll" href="../index.php">
                         <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                         </li>
                         <?php if (login_check($mysqli) == true) : ?>
                           <li>
-                              <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                              <a class="page-scroll" href="../includes/logout.php">Logout</a>
                           </li>
                         <?php endif; ?>
                     </ul>
@@ -96,68 +96,73 @@
                   ?>
                     <!-- Model Request Text -->
                     <h2 class="transform-reset">Request a Model Today</h2>
-                    <h4 class="transform-reset">Click <a href="#">here</a> for instructions and information on requesting a model.</h4>
+                    <h4 class="transform-reset">Having questions about parts of the form? View our frequently asked <a href="instructions.php">here</a>. </h4>
 
                     <form id="requestForm" action="submit.php" method="post">
                         <!-- Order Name Field -->
                         <div class="form-group">
                             <label for="usr">
-                                <h5 style="margin: 0">Name</h5></label>
-                            <input type="text" class="form-control" placeholder="John Doe" id="usr" name="usr" maxlength="100">
+                                <h5 style="margin: 0">Name <span style="color:red;">*</span></h5></label>
+                            <input type="text" class="form-control" placeholder="John Doe" id="usr" name="usr" maxlength="100" required>
                         </div>
                         <!-- Order E-Mail Field -->
                         <div class="form-group">
                             <label for="email">
-                                <h5 style="margin: 0">E-Mail</h5></label>
-                            <input type="email" class="form-control" placeholder="user@example.com" id="email" name="email" maxlength="64">
+                                <h5 style="margin: 0">E-Mail <span style="color:red;">*</span></h5></label>
+                            <input type="email" class="form-control" placeholder="user@example.com" id="email" name="email" maxlength="64" required>
                         </div>
-                        <!-- Order Address Field -->
+
+                        <div class="form-spacing"></div>
+
+                        <!-- Radio Button -->
+                        <!-- <h5 style="margin: 0;">I Am:</h5>
                         <div class="form-group">
-                            <label for="address">
-                                <h5 style="margin: 0">Address</h5></label>
+                            <label for="iAm1"><input type="radio" class="form-control" id="iAm1" name="iAm" value="blind person"><span>I am a blind person.</span></label>
+                        </div>
+                        <style media="screen">
+                          #iAm1, #iAm2, #iAm3 {
+                            width: auto;
+                            padding-right: 5px;
+                            padding-left: 5px;
+                            float: left;
+                          }
+                          #iAm1 span, #iAm2 span, #iAm3 span {
+                            position: absolute;
+                            top: 50%;
+                          }
+                          .radio-text {
+                            font-size: medium;
+                          }
+                          .button-container {
 
-                            <!-- Address Line 1 Field -->
-                            <div class="line-box">
-                                <a class="address-label">Address Line 1</a>
-                                <input type="text" class="form-control line-change" placeholder="Address Line 1" id="address1" name="address1" maxlength="25">
-                            </div>
+                          }
+                        </style> -->
 
-                            <!-- Address Line 2 Field -->
-                            <div class="line-box" style="margin-top: 10px;">
-                                <a class="address-label">Address Line 2</a>
-                                <input type="text" class="form-control line-change" placeholder="Address Line 2" id="address2" name="address2" maxlength="25">
-                            </div>
+                        <!-- School Field -->
+                        <div class="form-group">
+                            <label for="school">
+                                <h5 style="margin: 0;">School (If Applicable)</h5></label>
+                            <input type="text" class="form-control" id="school" name="school" maxlength="100">
+                        </div>
 
-                            <!-- City Field -->
-                            <div class="line-box" style="margin-top: 10px;">
-                                <a class="address-label">City</a>
-                                <input type="text" class="form-control line-change" placeholder="City" id="city" name="city" maxlength="25">
-                            </div>
+                        <!-- Model Description -->
+                        <div class="form-group">
+                            <label for="description">
+                                <h5 style="margin: 0;">Would you like a model description? (Models with descriptions may take longer to ship)</h5></label>
+                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100">
+                        </div>
 
-                            <!-- State Field -->
-                            <div class="line-box" style="margin-top: 10px;">
-                                <a class="address-label">State</a>
-                                <input type="text" class="form-control line-change" placeholder="State" id="state" name="state" maxlength="15">
-                            </div>
-
-                            <!-- Zip Code Field -->
-                            <div class="line-box" style="margin-top: 10px;">
-                                <a class="address-label">Zip Code</a>
-                                <input type="text" class="form-control line-change" placeholder="Zip Code" id="zipcode" name="zipcode" maxlength=10>
-                            </div>
-
-                            <!-- Braille Address Label -->
-                            <div class="line-box" style="margin-top: 10px;">
-                                <a class="address-label">Braille Address Label</a>
-                                <input type="checkbox" class="form-control checkbox-change" id="checkbox" name="checkbox">
-                            </div>
+                        <!-- Feedback -->
+                        <div class="line-box" style="margin-top: 10px;">
+                            <h5 class="address-label">Would you be willing to provide feedback?</h5>
+                            <input type="checkbox" class="form-control checkbox-change" id="checkbox" name="checkbox">
                         </div>
 
                         <!-- STL File Field -->
                         <div class="form-group">
                             <label for="stlUpload">
-                                <h5 style="margin: 0;">Description of Desired Model (or link to STL )</h5></label>
-                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100">
+                                <h5 style="margin: 0;">Description of Desired Model (or link to STL) <span style="color:red;">*</span></h5></label>
+                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100" required>
                         </div>
 
                         <!-- Model Size Field -->
@@ -188,11 +193,61 @@
                             <input type="text" class="form-control" placeholder="Details..." id="publicity" name="publicity" maxlength="250"></input>
                         </div>
 
+                        <div class="form-spacing"></div>
+
+                        <!-- Order Address Field -->
+                        <div class="form-group">
+                            <label for="address">
+                                <h5 style="margin: 0">Address</h5></label>
+
+                            <!-- Address Line 1 Field -->
+                            <div class="line-box">
+                                <a class="address-label">Address Line 1 <span style="color:red;">*</span></a>
+                                <input type="text" class="form-control line-change" placeholder="Address Line 1" id="address1" name="address1" maxlength="25" required>
+                            </div>
+
+                            <!-- Address Line 2 Field -->
+                            <div class="line-box" style="margin-top: 10px;">
+                                <a class="address-label">Address Line 2</a>
+                                <input type="text" class="form-control line-change" placeholder="Address Line 2" id="address2" name="address2" maxlength="25">
+                            </div>
+
+                            <!-- City Field -->
+                            <div class="line-box" style="margin-top: 10px;">
+                                <a class="address-label">City <span style="color:red;">*</span></a>
+                                <input type="text" class="form-control line-change" placeholder="City" id="city" name="city" maxlength="25" required>
+                            </div>
+
+                            <!-- State Field -->
+                            <div class="line-box" style="margin-top: 10px;">
+                                <a class="address-label">State <span style="color:red;">*</span></a>
+                                <input type="text" class="form-control line-change" placeholder="State" id="state" name="state" maxlength="15" required>
+                            </div>
+
+                            <!-- Zip Code Field -->
+                            <div class="line-box" style="margin-top: 10px;">
+                                <a class="address-label">Zip Code <span style="color:red;">*</span></a>
+                                <input type="text" class="form-control line-change" placeholder="Zip Code" id="zipcode" name="zipcode" maxlength=10 required>
+                            </div>
+
+                            <!-- Braille Address Label -->
+                            <div class="line-box" style="margin-top: 10px;">
+                                <a class="address-label">Braille Address Label</a>
+                                <input type="checkbox" class="form-control checkbox-change" id="checkbox" name="checkbox">
+                            </div>
+                        </div>
+
                         <!-- Submit Button -->
                         <div class="button-box">
                             <!-- <a class="btn btn-default btn-lg" href="javascript:submit()">Submit</a> -->
                             <input id="submit" type="submit" class="btn btn-default btn-lg">
                         </div>
+                        <style media="screen">
+                          .form-spacing {
+                            width: 100%;
+                            height: 50px;
+                          }
+                        </style>
                     </form>
                 </div>
             </div>
@@ -224,7 +279,7 @@
         </script>
 
         <!-- jQuery -->
-        <script src="vendor/jquery/jquery.js"></script>
+        <script src="../vendor/jquery/jquery.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -233,7 +288,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
         <!-- Theme JavaScript -->
-        <script src="js/grayscale.min.js"></script>
+        <script src="../js/grayscale.min.js"></script>
 
     </div>
 </body>

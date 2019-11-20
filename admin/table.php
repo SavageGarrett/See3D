@@ -1,6 +1,6 @@
 <?php
-  include_once 'includes/register.inc.php';
-  include_once 'includes/functions.php';
+  include_once '../includes/register.inc.php';
+  include_once '../includes/functions.php';
 
   sec_session_start();
  ?>
@@ -21,20 +21,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="../css/grayscale.min.css" rel="stylesheet">
 
     <!-- Added CSS -->
-    <link href="css/index.css" rel="stylesheet">
-    <link href="css/slides.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/slides.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="../js/sha512.js"></script>
+    <script type="text/JavaScript" src="../js/forms.js"></script>
 
 </head>
 
@@ -47,7 +47,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="./index.php">
+                    <a class="navbar-brand page-scroll" href="../index.php">
                         <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                     </a>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                            <a class="page-scroll" href="../includes/logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -94,7 +94,7 @@
           </section>
          <?php
           // Get Form Submits from Database
-          include_once './includes/process_table.php';
+          include_once '../includes/process_table.php';
           getRequests($mysqli, "form_submits", 25);
           ?>
           <style>
@@ -109,7 +109,7 @@
               float: none;
             }
           </style>
-          <form class="" action="./includes/process_table_change.php" method="post">
+          <form class="" action="../includes/process_table_change.php" method="post">
             <div class="button-box" style="position: absolute;">
               <input  id="save"
                       class="btn btn-default btn-lg"
@@ -122,7 +122,7 @@
 
          <?php else : ?>
              <p>
-                 <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+                 <span class="error">You are not authorized to access this page.</span> Please <a href="./login.php">login</a>.
              </p>
          <?php endif; ?>
 
@@ -132,7 +132,7 @@
         </footer>
 
         <!-- jQuery -->
-        <script src="vendor/jquery/jquery.js"></script>
+        <script src="../vendor/jquery/jquery.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -141,7 +141,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
         <!-- Theme JavaScript -->
-        <script src="js/grayscale.min.js"></script>
+        <script src="../js/grayscale.min.js"></script>
 
     </div>
 </body>

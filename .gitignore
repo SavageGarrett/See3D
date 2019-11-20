@@ -5,3 +5,5 @@ node_modules
 package-lock.json
 constants.php
 includes/psl-config.php
+gator.html
+cgi-bin

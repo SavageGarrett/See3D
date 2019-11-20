@@ -1,6 +1,6 @@
 <?php
-  include_once 'includes/register.inc.php';
-  include_once 'includes/functions.php';
+  include_once '../includes/register.inc.php';
+  include_once '../includes/functions.php';
 
   sec_session_start();
  ?>
@@ -21,20 +21,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="../css/grayscale.min.css" rel="stylesheet">
 
     <!-- Added CSS -->
-    <link href="css/index.css" rel="stylesheet">
-    <link href="css/slides.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/slides.css" rel="stylesheet">
 
     <!-- Added Scripts -->
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="../js/sha512.js"></script>
+    <script type="text/JavaScript" src="../js/forms.js"></script>
 
 </head>
 
@@ -47,7 +47,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="./index.php">
+                    <a class="navbar-brand page-scroll" href="../index.php">
                         <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                     </a>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a class="page-scroll" href="./includes/logout.php">Logout</a>
+                            <a class="page-scroll" href="../includes/logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -89,12 +89,51 @@
                    ?>
                    <?php if (login_check($mysqli) == true) : ?>
                    <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-                   <h1>Menu</h1>
-                   <p><a href="./register.php">Register</a> New User</p>
-                   <p><a href="./table.php">Request</a> Table</p>
+                   <form name="registration_form" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post">
+                     <h3>Register</h3>
+                     <!-- E-Mail Field -->
+                     <div class="form-group">
+                         <label for="email">
+                             <h5 style="margin: 0">E-Mail</h5></label>
+                         <input type="text" class="form-control" placeholder="E-Mail" id="email" name="email" maxlength="64">
+                     </div>
+                       <!-- Username Field -->
+                       <div class="form-group">
+                           <label for="usr">
+                               <h5 style="margin: 0">Username</h5></label>
+                           <input type="text" class="form-control" placeholder="Username" id="username" name="username" maxlength="100">
+                       </div>
+                       <!-- Password Field -->
+                       <div class="form-group">
+                           <label for="email">
+                               <h5 style="margin: 0">Password</h5></label>
+                           <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="64">
+                       </div>
+                       <!-- Repeat Password Field -->
+                       <div class="form-group">
+                           <label for="email">
+                               <h5 style="margin: 0">Repeat Password</h5></label>
+                           <input type="password" class="form-control" placeholder="Password" id="confirmpwd" name="confirmpwd" maxlength="64">
+                       </div>
+
+                       <!-- Submit Button -->
+                       <div class="button-box">
+                         <input  class="btn btn-default btn-lg"
+                                 type="button"
+                                 value="Register"
+                                 onclick="return regformhash(this.form,
+                                                this.form.username,
+                                                this.form.email,
+                                                this.form.password,
+                                                this.form.confirmpwd);" />
+                       </div>
+                   </form>
+                   <div class="button-box">
+                     <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
+                   </div>
                    <?php else : ?>
                        <p>
-                           <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+                           <span class="error">You are not authorized to access this page.</span> Please <a href="./login.php">login</a>.
                        </p>
                    <?php endif; ?>
 
@@ -108,7 +147,7 @@
         </footer>
 
         <!-- jQuery -->
-        <script src="vendor/jquery/jquery.js"></script>
+        <script src="../vendor/jquery/jquery.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -117,7 +156,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
         <!-- Theme JavaScript -->
-        <script src="js/grayscale.min.js"></script>
+        <script src="../js/grayscale.min.js"></script>
 
     </div>
 </body>

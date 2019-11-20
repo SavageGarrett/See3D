@@ -15,16 +15,16 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="../css/grayscale.min.css" rel="stylesheet">
+    <link href="../../css/grayscale.min.css" rel="stylesheet">
 
   	<!-- Added CSS -->
-  	<link href="../css/index.css" rel="stylesheet">
-  	<link href="../css/slides.css" rel="stylesheet">
+  	<link href="../../css/index.css" rel="stylesheet">
+  	<link href="../../css/slides.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="../index.php">
+                <a class="navbar-brand page-scroll" href="../../index.php">
                     <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                 </a>
             </div>
@@ -56,11 +56,6 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <?php if (login_check($mysqli) == true) : ?>
-                      <li>
-                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
-                      </li>
-                    <?php endif; ?>
                     <!-- <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -93,43 +88,24 @@
 
 	<section class="container content-section text-center reset-top-padding">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div>
-                <img style="float: left;" src="../img_refactor/klein_bottle_cropped.jpg" alt="Klein Bottle 3D Model">
-                <h3>Winslow Parker</h3>
-                <p>Retired Adaptive Computer Trainmer</p>
-              </div>
-
-              <div style="clear: left;"></div>
-
-              <p>
-                "I first heard of See3D on Top Tech Tidbits. I needed a 3D model of the Yin/Yang symbol for a devotional I was writing, so I contacted Caroline.
-                When I received the model, I became even more excited since with age and complete vision loss, I have begun to forget what certain things look like.
-                Since then, I’ve requested models of a Moebius ring and a Klein bottle. These weird shapes are fascinating and I find myself exploring the model while my brain is busy doing its thing.
-              </p>
-              <p>
-                Thanks Caroline, all you other volunteers and those who contribute financially to this project. Very helpful and enlightening."
-              </p>
-
-              <style>
-                div img {
-                  width: 200px;
-                  height: 200px;
-                  margin-bottom: 50px;
-                  margin-right: 20px;
-                }
-                div h3 {
-                  padding-top: 40px;
-                }
-                div h3, div p {
-                  margin-bottom: 10px;
-                }
-                div a{
-                  font-size: 20px;
-                }
-              </style>
-            </div>
+          <h1 class="center-fix">Thank You for Requesting a Model!</h1>
+          <h2 class="center-fix">Consider Donating to our GoFundMe Campaign</h2>
+          <div class="button-box">
+            <a href="https://www.gofundme.com/f/see3d/donate" class="btn btn-default btn-lg" id="goFundMe" onclick="unFocus('goFundMe')">Donate</a>
+          </div>
         </div>
+        <style media="screen">
+          .center-fix {
+            text-align: center;
+          }
+          .button-box {
+            width: 25%;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        </style>
     </section>
 
     <!-- Footer -->
@@ -138,7 +114,7 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.js"></script>
+    <script src="../../vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -147,7 +123,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="../js/grayscale.min.js"></script>
+    <script src="../../js/grayscale.min.js"></script>
 
 	</div>
 </body>

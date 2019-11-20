@@ -31,7 +31,7 @@
 define("HOST", "127.0.01"); 			// The host you want to connect to.
 define("USER", "bot"); 			// The database username.
 define("PASSWORD", "b0t34l98hgBrn"); 	// The database password.
-define("DATABASE", "login");             // The database name.
+define("DATABASE", "see3d_userBase");             // The database name.
 
 /**
  * Who can register and what the default role will be

@@ -22,7 +22,7 @@ include_once 'psl-config.php';   // Needed because functions.php is not included
 // Connect
 $mysqli = new mysqli(HOST, USER, PASSWORD, "see3d_formSubmits");
 if ($mysqli->connect_error) {
-    header("Location: ../error.php?err=Unable to connect to MySQL");
+    header("Location: ../status/error.php?err=Unable to connect to MySQL");
     exit();
 }
 ?>

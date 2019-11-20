@@ -24,17 +24,17 @@ sec_session_start(); // Our custom secure way of starting a PHP session.
 if (isset($_POST['date'])) {
     if (delete_entries($_POST['date'], $mysqli) == true) {
         // Login success
-        header("Location: ../table.php");
+        header("Location: ../admin/table.php");
         echo "Deletion Success!";
         exit();
     } else {
         // Login failed
-        header('Location: ../table.php?error=1');
+        header('Location: ../admin/table.php?error=1');
         exit();
     }
 } else {
     // The correct POST variables were not sent to this page.
-    header('Location: ../error.php?err=Could not process POST variables');
+    header('Location: ../status/error.php?err=Could not process POST variables');
     exit();
 }
 ?>

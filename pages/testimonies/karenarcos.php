@@ -15,16 +15,16 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="../css/grayscale.min.css" rel="stylesheet">
+    <link href="../../css/grayscale.min.css" rel="stylesheet">
 
   	<!-- Added CSS -->
-  	<link href="../css/index.css" rel="stylesheet">
-  	<link href="../css/slides.css" rel="stylesheet">
+  	<link href="../../css/index.css" rel="stylesheet">
+  	<link href="../../css/slides.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="../index.php">
+                <a class="navbar-brand page-scroll" href="../../index.php">
                     <i class="fa fa-play-circle"></i> <span class="light">See</span>3D
                 </a>
             </div>
@@ -56,11 +56,6 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <?php if (login_check($mysqli) == true) : ?>
-                      <li>
-                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
-                      </li>
-                    <?php endif; ?>
                     <!-- <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -95,7 +90,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
               <div>
-              <img style="float: left;" src="../img_refactor/karen_cropped.jpg" alt="Karen Arcos">
+              <img style="float: left;" src="../../img_refactor/karen_cropped.jpg" alt="Karen Arcos">
               <h3>Karen Arcos</h3>
               <p>M.S. Cognitive Neuroscience Ph.D. candidate, University of California Irvine From Los Angeles</p>
             </div>
@@ -133,7 +128,7 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.js"></script>
+    <script src="../../vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -142,7 +137,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="../js/grayscale.min.js"></script>
+    <script src="../../js/grayscale.min.js"></script>
 
 	</div>
 </body>
