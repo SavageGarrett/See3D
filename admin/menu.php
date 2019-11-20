@@ -90,7 +90,7 @@
                    <?php if (login_check($mysqli) == true) : ?>
                    <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
                    <h1>Menu</h1>
-                   <p><a href="./register.php">Register</a> New User</p>
+                   <p><a href="./register.php">Register</a> New Admin User</p>
                    <p><a href="./table.php">Request</a> Table</p>
                    <?php else : ?>
                        <p>
