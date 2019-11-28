@@ -34,7 +34,7 @@ function formhash_login(form, password) {
 
 function formhash_delete(form) {
     let timestamp_elements = document.getElementsByClassName("date");
-    let delete_model_elements = document.getElementsByClassName("completed-col");
+    let delete_model_elements = document.getElementsByClassName("table-checkbox");
     let delete_models = [];
     let itemCount = 0;
     let model_checked = false;

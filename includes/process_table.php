@@ -33,7 +33,7 @@ function getRequests($mysqli, $table, $limit) {
         } else if (strcmp($table, "form_submits_permanent") == 0) {
           echo "<td class=\"completed-col\">" . $all_results[$j][1] . "</td>";
         } else {
-          echo "<td class=\"completed-col\"><input type=\"checkbox\"></td>";
+          echo "<td class=\"completed-col\"><input class=\"table-checkbox\" type=\"checkbox\"></td>";
         }
 
         // Loop through Drop Down Lists
