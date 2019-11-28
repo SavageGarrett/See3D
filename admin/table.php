@@ -83,8 +83,10 @@
               echo $error_msg;
           }
          ?>
+
+         <!-- Authenticate User -->
          <?php if (login_check($mysqli) == true) : ?>
-          <section id="model-request" class="container content-section text-center reset-top-padding">
+          <section id="heading-text" class="container content-section text-center reset-top-padding">
             <div class="row">
               <div id="page-top-text" class="col-lg-8 col-lg-offset-2">
                 <h1>Form Submits</h1>
@@ -92,44 +94,107 @@
               </div>
             </div>
           </section>
-         <?php
-          // Get Form Submits from Database
-          include_once '../includes/process_table.php';
-          getRequests($mysqli, "form_submits", 25);
-          ?>
-          <style>
-            table, th, td {
-              border: 2px solid white;
-            }
-            td {
-              text-align: center;
-              vertical-align: middle;
-            }
-            .btn-default {
-              float: none;
-            }
-          </style>
-          <form class="" action="../includes/process_table_change.php" method="post">
-            <div class="button-box" style="position: absolute;">
-              <input  id="save"
-                      class="btn btn-default btn-lg"
-                      type="button"
-                      value="Save"
-                      onclick="formhash_delete(this.form);" />
-              <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
-            </div>
-          </form>
 
+          <section id="table-section" class="container content-section text-center reset-top-padding">
+            <div class="row">
+              <!-- Table Styling -->
+              <style>
+                table, td, th {
+                  border: 2px solid black;
+                  color: black;
+                }
+                th span{
+                  margin-left: 10px;
+                }
+                td {
+                  vertical-align: middle;
+                  width: 240px;
+                  height: 50px;
+                }
+                tr:nth-child(even) {
+                  background-color: white;
+                }
+                tr:nth-child(odd) {
+                  background-color: grey;
+                }
+                .date {
+                  text-align: center;
+                }
+                .completed-col {
+                  text-align: center;
+                  width: 40px !important;
+                }
+                .collapse-list {
+                  cursor: pointer;
+                }
+                .collapse-text {
+                  margin-left: 10px;
+                  float: left;
+                }
+                .plus-sign {
+                  margin-right: 10px;
+                  float: right;
+                }
+                .long-mailing-info {
+                  display: none;
+                  border: none;
+                  height: auto;
+                  width: auto;
+                }
+                .align-table {
+                  margin: 0px auto;
+                }
+                .form-move {
+                  padding-top: 100px;
+                }
+              </style>
+
+              <!-- Table JavaScript -->
+              <script type="text/javascript">
+                function dropDown(index) {
+                  let collapseTd = document.getElementsByClassName("collapse-list");
+                  let mailingInfo = document.getElementsByClassName("long-mailing-info");
+
+                  if (collapseTd[index].children[1].innerHTML === "+") {
+                    mailingInfo[index].style.display = "block";
+                    collapseTd[index].children[1].innerHTML = "-";
+                  } else {
+                    mailingInfo[index].style.display = "none";
+                    collapseTd[index].children[1].innerHTML = "+";
+                  }
+
+                }
+              </script>
+
+              <!-- Output Table -->
+              <div class="align-table">
+                <?php
+                  // Get Form Submits from Database
+                  include_once '../includes/process_table.php';
+                  getRequests($mysqli, "form_submits", 25);
+                ?>
+              </div>
+
+              <!-- Update Submission -->
+              <form class="form-move" action="../includes/process_table_change.php" method="post">
+                  <div class="button-box" style="position: absolute;">
+                    <input  id="save"
+                            class="btn btn-default btn-lg"
+                            type="button"
+                            value="Save"
+                            onclick="formhash_delete(this.form);" />
+                    <a href="./menu.php" class="btn btn-default btn-lg" id="back">Back</a>
+                  </div>
+              </form>
+            </div>
+          </section>
+
+         <!-- Force Unknown User to Log In -->
          <?php else : ?>
              <p>
                  <span class="error">You are not authorized to access this page.</span> Please <a href="./login.php">login</a>.
              </p>
          <?php endif; ?>
-
-        <!-- Footer -->
-        <footer>
-
-        </footer>
 
         <!-- jQuery -->
         <script src="../vendor/jquery/jquery.js"></script>

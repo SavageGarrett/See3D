@@ -103,94 +103,149 @@
                         <div class="form-group">
                             <label for="usr">
                                 <h5 style="margin: 0">Name <span style="color:red;">*</span></h5></label>
-                            <input type="text" class="form-control" placeholder="John Doe" id="usr" name="usr" maxlength="100" required>
+                            <input type="text" class="form-control" placeholder="John Doe" id="usr" name="usr" maxlength="128" required>
                         </div>
                         <!-- Order E-Mail Field -->
                         <div class="form-group">
                             <label for="email">
                                 <h5 style="margin: 0">E-Mail <span style="color:red;">*</span></h5></label>
-                            <input type="email" class="form-control" placeholder="user@example.com" id="email" name="email" maxlength="64" required>
+                            <input type="email" class="form-control" placeholder="user@example.com" id="email" name="email" maxlength="256" required>
                         </div>
 
                         <div class="form-spacing"></div>
 
-                        <!-- Radio Button -->
-                        <!-- <h5 style="margin: 0;">I Am:</h5>
-                        <div class="form-group">
-                            <label for="iAm1"><input type="radio" class="form-control" id="iAm1" name="iAm" value="blind person"><span>I am a blind person.</span></label>
+                        <!-- Button Enable Script -->
+                        <script type="text/javascript">
+                          function textEnable(id) {
+                            let textfield = document.getElementById(id);
+                            textfield.disabled = false;
+                          }
+                          function textDisable(id) {
+                            let textfield = document.getElementById(id);
+                            textfield.disabled = true;
+                            textfield.value = "";
+                          }
+                        </script>
+
+                        <!-- I Am Radio Button Field -->
+                        <h5 style="margin: 0;">I Am:</h5>
+                        <div class="form-group tabbed-group">
+                            <div>
+                              <input onclick="textDisable('otherInput');" type="radio" class="form-control radio-input" id="iAm1" name="iam" value="blind">
+                              <label class="iamLabel" for="iAm1">A person who is blind or visually impaired</label>
+                            </div>
+                            <br>
+                            <div>
+                              <input onclick="textDisable('otherInput');" type="radio" class="form-control radio-input" id="iAm2" name="iam" value="parent">
+                              <label class="iamLabel" for="iAm2">A parent, guardian, or teacher of someone who is blind or visually impaired</label>
+                            </div>
+                            <br>
+                            <div>
+                              <input onclick="textEnable('otherInput');" type="radio" class="form-control radio-input" id="iAm3" name="iam" value="other">
+                              <label style="margin-right: 20px;" class="iamLabel" id="iAm3Label" for="iAm3">Other: </label>
+                              <input id="otherInput" class="form-control textbox-resize" type="text" name="otherPerson" maxlength="128" disabled>
+                            </div>
                         </div>
+
                         <style media="screen">
-                          #iAm1, #iAm2, #iAm3 {
+                          .radio-input {
                             width: auto;
                             padding-right: 5px;
                             padding-left: 5px;
                             float: left;
+                            margin: 0 !important;
                           }
-                          #iAm1 span, #iAm2 span, #iAm3 span {
-                            position: absolute;
-                            top: 50%;
+                          .iamLabel {
+                            margin-top: 7px;
+                            margin-left: 10px;
                           }
-                          .radio-text {
-                            font-size: medium;
+                          .tabbed-group {
+                            margin-left: 25px;
                           }
-                          .button-container {
+                          .textbox-resize{
+                            width: 40%;
+                          }
+                          #iAm3Label {
+                            float:left;
+                          }
+                        </style>
 
-                          }
-                        </style> -->
+                        <!-- Model Description -->
+                        <h5 style="margin: 0;">Would you like a model description? (Models with descriptions may take longer to ship)</h5>
+                        <div class="form-group tabbed-group">
+                            <div>
+                              <input type="radio" class="form-control radio-input" id="desc1" name="description" value="email" onclick="textDisable('phoneInput');">
+                              <label class="iamLabel" for="desc1">Email Description</label>
+                            </div>
+                            <br>
+                            <div>
+                              <input type="radio" class="form-control radio-input" id="desc2" name="description" value="braille" onclick="textDisable('phoneInput')">
+                              <label class="iamLabel" for="desc2">Braille Description (Hard Copy)</label>
+                            </div>
+                            <br>
+                            <div>
+                              <input type="radio" class="form-control radio-input" id="desc3" name="description" value="large print" onclick="textDisable('phoneInput');">
+                              <label class="iamLabel" for="desc3">Large Print Description (Hard Copy)</label>
+                            </div>
+                            <br>
+                            <div>
+                              <input type="radio" class="form-control radio-input" id="desc4" name="description" value="telephone" onclick="textEnable('phoneInput');">
+                              <label style="margin-right: 20px;" class="iamLabel" id="iAm3Label" for="desc4">Phone Call</label>
+                              <input id="phoneInput" class="form-control textbox-resize" type="tel" name="phoneInput" maxlength="16" placeholder="(123)-456-7890" disabled>
+                            </div>
+                            <br>
+                            <div>
+                              <input type="radio" class="form-control radio-input" id="desc5" name="description" value="no description" onclick="textDisable('phoneInput');">
+                              <label class="iamLabel" for="desc5">No Description</label>
+                            </div>
+                        </div>
 
                         <!-- School Field -->
                         <div class="form-group">
                             <label for="school">
                                 <h5 style="margin: 0;">School (If Applicable)</h5></label>
-                            <input type="text" class="form-control" id="school" name="school" maxlength="100">
-                        </div>
-
-                        <!-- Model Description -->
-                        <div class="form-group">
-                            <label for="description">
-                                <h5 style="margin: 0;">Would you like a model description? (Models with descriptions may take longer to ship)</h5></label>
-                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100">
+                            <input type="text" class="form-control" id="school" name="school" maxlength="128">
                         </div>
 
                         <!-- Feedback -->
                         <div class="line-box" style="margin-top: 10px;">
-                            <h5 class="address-label">Would you be willing to provide feedback?</h5>
-                            <input type="checkbox" class="form-control checkbox-change" id="checkbox" name="checkbox">
+                            <h5 class="address-label" style="margin:0;">Would you be willing to provide feedback?</h5>
+                            <input type="checkbox" class="form-control checkbox-change" id="feedback" name="feedback">
                         </div>
 
                         <!-- STL File Field -->
                         <div class="form-group">
                             <label for="stlUpload">
-                                <h5 style="margin: 0;">Description of Desired Model (or link to STL) <span style="color:red;">*</span></h5></label>
-                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="100" required>
+                                <h5 style="margin: 0;">What model would you like? (or link to file download) <span style="color:red;">*</span></h5></label>
+                            <input type="text" class="form-control" id="stlUpload" name="stlUpload" maxlength="256" required>
                         </div>
 
                         <!-- Model Size Field -->
                         <div class="form-group">
                             <label for="modelSize">
                                 <h5 style="margin: 0;">Desired Model Size (in.)</h5></label>
-                            <input type="text" class="form-control" placeholder="3 - 7" id="modelSize" name="modelSize" maxlength=5></input>
+                            <input type="text" class="form-control" id="modelSize" name="modelSize" maxlength="128"></input>
                         </div>
 
                         <!-- Considerations Field -->
                         <div class="form-group">
                             <label for="considerations">
                                 <h5 style="margin: 0;">Do you need any special considerations?</h5></label>
-                            <input type="text" class="form-control" placeholder="Details..." id="considerations" name="considerations" maxlength="250"></input>
+                            <input type="text" class="form-control" placeholder="Details..." id="considerations" name="considerations" maxlength="256"></input>
                         </div>
 
                         <!-- Understand Field -->
                         <div class="form-group">
                             <label for="understand">
                                 <h5 style="margin: 0;">What part of this object are you trying to better understand?</h5></label>
-                            <input type="text" class="form-control" placeholder="Details..." id="understand" name="understand" maxlength="250"></input>
+                            <input type="text" class="form-control" placeholder="Details..." id="understand" name="understand" maxlength="256"></input>
                         </div>
 
                         <!-- Publicity Field -->
                         <div class="form-group">
                             <label for="publicity">
                                 <h5 style="margin: 0;">How did you hear about See3D?</h5></label>
-                            <input type="text" class="form-control" placeholder="Details..." id="publicity" name="publicity" maxlength="250"></input>
+                            <input type="text" class="form-control" placeholder="Details..." id="publicity" name="publicity" maxlength="256"></input>
                         </div>
 
                         <div class="form-spacing"></div>
@@ -203,37 +258,37 @@
                             <!-- Address Line 1 Field -->
                             <div class="line-box">
                                 <a class="address-label">Address Line 1 <span style="color:red;">*</span></a>
-                                <input type="text" class="form-control line-change" placeholder="Address Line 1" id="address1" name="address1" maxlength="25" required>
+                                <input type="text" class="form-control line-change" placeholder="Address Line 1" id="address1" name="address1" maxlength="128" required>
                             </div>
 
                             <!-- Address Line 2 Field -->
                             <div class="line-box" style="margin-top: 10px;">
                                 <a class="address-label">Address Line 2</a>
-                                <input type="text" class="form-control line-change" placeholder="Address Line 2" id="address2" name="address2" maxlength="25">
+                                <input type="text" class="form-control line-change" placeholder="Address Line 2" id="address2" name="address2" maxlength="128">
                             </div>
 
                             <!-- City Field -->
                             <div class="line-box" style="margin-top: 10px;">
                                 <a class="address-label">City <span style="color:red;">*</span></a>
-                                <input type="text" class="form-control line-change" placeholder="City" id="city" name="city" maxlength="25" required>
+                                <input type="text" class="form-control line-change" placeholder="City" id="city" name="city" maxlength="32" required>
                             </div>
 
                             <!-- State Field -->
                             <div class="line-box" style="margin-top: 10px;">
                                 <a class="address-label">State <span style="color:red;">*</span></a>
-                                <input type="text" class="form-control line-change" placeholder="State" id="state" name="state" maxlength="15" required>
+                                <input type="text" class="form-control line-change" placeholder="State" id="state" name="state" maxlength="32" required>
                             </div>
 
                             <!-- Zip Code Field -->
                             <div class="line-box" style="margin-top: 10px;">
                                 <a class="address-label">Zip Code <span style="color:red;">*</span></a>
-                                <input type="text" class="form-control line-change" placeholder="Zip Code" id="zipcode" name="zipcode" maxlength=10 required>
+                                <input type="text" class="form-control line-change" placeholder="Zip Code" id="zipcode" name="zipcode" maxlength="10" required>
                             </div>
 
                             <!-- Braille Address Label -->
                             <div class="line-box" style="margin-top: 10px;">
                                 <a class="address-label">Braille Address Label</a>
-                                <input type="checkbox" class="form-control checkbox-change" id="checkbox" name="checkbox">
+                                <input type="checkbox" class="form-control checkbox-change" id="label" name="label">
                             </div>
                         </div>
 

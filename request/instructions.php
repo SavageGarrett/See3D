@@ -88,7 +88,27 @@
 
 	<section class="container content-section text-center reset-top-padding">
         <div class="row">
-          <h1>Frequently Asked Questions for requesting a model</h1>
+          <div class="faq-container">
+            <h1>Frequently Asked Questions for requesting a model</h1>
+
+            <h3>How do I select which model I would like?</h3>
+            <p>You may provide an explanation of what you want on the request form. If you have a specific model you would like, you may provide a link to where we can download the model.</p>
+
+            <h3>What is a model description?</h3>
+            <p>Our 3D models come with an optional description of the model. This description can be printed in braille, print in large text, sent over e-mail, or given over the phone.
+            You may also select to not receive a description. Descriptions allow blind individuals to get a better understanding of different features of the model. Labels are also placed
+            on the model itself to make these described features more recognizable.</p>
+
+            <h3>Where do the 3D models come from?</h3>
+            <p>Most of our 3D models come from <a href="thingiverse.com">Thingiverse</a>. Several of our models have also been designed by volunteers, or are available from companies we have collaborated with.</p>
+
+            <h3>Do you charge for your 3D models?</h3>
+            <p>Our models are free for anyone who is blind or visually impaired. We do suggest you donate if you will be requesting multiple models.</p>
+
+            <h3>Who should I contact if I would like to place a large order?</h3>
+            <p>If you would like to place a large order of models please contact <a href="mailto:info@see3d.org">info@see3d.org</a>.
+              Depending on your order size, we will need to negotiate a price for the requested amount of models.</p>
+          </div>
         </div>
         <style media="screen">
           .center-fix {
@@ -100,6 +120,10 @@
             margin-bottom: 25px;
             margin-right: auto;
             margin-left: auto;
+          }
+          .faq-container {
+            margin-left: 100px;
+            margin-right: 100px;
           }
         </style>
     </section>

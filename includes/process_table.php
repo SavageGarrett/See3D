@@ -11,40 +11,78 @@ function getRequests($mysqli, $table, $limit) {
         $all_results[$i] = $arr_row;
       }
 
-      // Output Table Header
       echo "<table id=\"requests\" style=\"width: 100%;\">";
       echo "<tr>";
-      echo "<th>Date</th>";
-      echo "<th>Completed</th>";
-      echo "<th>Name</th>";
-      echo "<th>Email</th>";
-      echo "<th>Address</th>";
-      echo "<th>Label</th>";
-      echo "<th>Stl File</th>";
-      echo "<th>Model Size</th>";
-      echo "<th>Considerations</th>";
-      echo "<th>Understand</th>";
-      echo "<th>How Found</th>";
+      echo "<th><span>Date</span></th>";
+      echo "<th><span>Complete</span></th>";
+      echo "<th><span>Mailing/Personal Info</span></th>";
+      echo "<th><span>Request</span></th>";
+      echo "<th><span>Other Data</span></th>";
       echo "</tr>";
 
-      // Output Table Values
+      // Loop through Columns
+      $indexCount = 0;
       for ($j = 0; $j < $count; $j++) {
+        // Begin Row Info
         echo "<tr>";
-        $inner_count = count($all_results[$j]);
-        for ($k = 0; $k < $inner_count; $k++) {
-           if ($k == 0) {
-              echo "<td class=\"timestamp\">" . $all_results[$j][$k] . "</td>";
-          } else if ($k == 1) {
-            if ($all_results[$j][$k] == 1 && strcmp($table, "form_submits") == 0){
-              echo "<td>Entry Needs Deleted</td>";
-            } else if (strcmp($table, "form_submits_permanent") == 0) {
-              echo "<td>" . $all_results[$j][$k] . "</td>";
+        echo "<td class=\"date\">" . $all_results[$j][0] . "</td>";
+
+        // Create Correct Check Box
+        if ($all_results[$j][1] == 1 && strcmp($table, "form_submits") == 0){
+          echo "<td class=\"completed-col\">Entry Needs Deleted</td>";
+        } else if (strcmp($table, "form_submits_permanent") == 0) {
+          echo "<td class=\"completed-col\">" . $all_results[$j][1] . "</td>";
+        } else {
+          echo "<td class=\"completed-col\"><input type=\"checkbox\"></td>";
+        }
+
+        // Loop through Drop Down Lists
+        for ($k = 0; $k < 3; $k++) {
+          echo "<td class=\"collapse-list\" id=\"mailing-info\" onclick=\"dropDown(" . $indexCount . ")\">";
+          $indexCount++;
+
+          if ($k == 0) {
+            echo "<span class=\"collapse-text\">" . $all_results[$j][2] . "</span>";
+            echo "<span class=\"plus-sign\">+</span>";
+            echo "<span class=\"long-mailing-info\">";
+            echo "<br>" . $all_results[$j][3];
+            echo "<br>" . $all_results[$j][6];
+            echo "<br>" . $all_results[$j][14];
+            if($all_results[$j][15]) {
+              echo "<br>Braille Label: Yes";
             } else {
-              echo "<td><input class=\"delete_model\" type=\"checkbox\"></td>";
+              echo "<br>Braille Label: No";
             }
-          } else {
-            echo "<td>" . $all_results[$j][$k] . "</td>";
+            echo "</span>";
+          } else if ($k == 1) {
+            echo "<span class=\"collapse-text\">Request Info...</span>";
+            echo "<span class=\"plus-sign\">+</span>";
+            echo "<span class=\"long-mailing-info\">";
+            echo "<br>" . $all_results[$j][9];
+            echo "<br>Size: " . $all_results[$j][10];
+            if(strcmp($all_results[$j][5],"telephone") == 0) {
+              echo "<br>Phone Description: " . $all_results[$j][6];
+            } else {
+              echo "<br>" . $all_results[$j][5];
+            }
+            echo "<br>Considerations: " . $all_results[$j][11];
+            echo "<br>Understand: " . $all_results[$j][12];
+            echo "</span>";
+          } else if ($k == 2) {
+            echo "<span class=\"collapse-text\">Other</span>";
+            echo "<span class=\"plus-sign\">+</span>";
+            echo "<span class=\"long-mailing-info\">";
+            echo "<br>Person Ordering: " . $all_results[$j][4];
+            echo "<br>School: " . $all_results[$j][7];
+            if($all_results[$j][8]) {
+              echo "<br> No Feed Back";
+            } else {
+              echo "<br> Wants to Provide Feedback";
+            }
+            echo "<br> How Found: " . $all_results[$j][13];
+            echo "</span>";
           }
+          echo "</td>";
         }
         echo "</tr>";
       }
