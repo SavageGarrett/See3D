@@ -31,10 +31,12 @@
     <!-- Added CSS -->
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/slides.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/table.css">
 
     <!-- Added Scripts -->
     <script type="text/JavaScript" src="../js/sha512.js"></script>
     <script type="text/JavaScript" src="../js/forms.js"></script>
+    <script type="text/javascript" src="../js/table.js"></script>
 
 </head>
 
@@ -92,27 +94,29 @@
               </div>
             </div>
           </section>
-         <?php
-          // Get Form Submits from Database
-          include_once '../includes/process_table.php';
-          getRequests($mysqli, "form_submits_permanent", 50);
-          ?>
-          <style>
-            table, th, td {
-              border: 2px solid white;
-            }
-            td {
-              text-align: center;
-              vertical-align: middle;
-            }
-            .btn-default {
-              float: none;
-            }
-          </style>
-          <form class="" action="../includes/process_table_change.php" method="post">
-            <div class="button-box" style="position: absolute;">
+
+          <section id="table-section" class="container content-section text-center reset-top-padding">
+            <div class="row">
+              <!-- Table JavaScript -->
+              <script type="text/javascript">
+
+
+                }
+              </script>
+
+              <!-- Output Table -->
+              <div class="align-table">
+                <?php
+                  // Get Form Submits from Database
+                  include_once '../includes/process_table.php';
+                  getRequests($mysqli, "form_submits_permanent", 25);
+                ?>
+              </div>
+
+              <!-- Back to Previous Table -->
+              <a href="./table.php" class="btn btn-default btn-lg" id="back">Back</a>
             </div>
-          </form>
+          </section>
 
          <?php else : ?>
              <p>

@@ -31,10 +31,12 @@
     <!-- Added CSS -->
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/slides.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/table.css">
 
     <!-- Added Scripts -->
     <script type="text/JavaScript" src="../js/sha512.js"></script>
     <script type="text/JavaScript" src="../js/forms.js"></script>
+    <script type="text/javascript" src="../js/table.js"></script>
 
 </head>
 
@@ -97,75 +99,6 @@
 
           <section id="table-section" class="container content-section text-center reset-top-padding">
             <div class="row">
-              <!-- Table Styling -->
-              <style>
-                table, td, th {
-                  border: 2px solid black;
-                  color: black;
-                }
-                th span{
-                  margin-left: 10px;
-                }
-                td {
-                  vertical-align: middle;
-                  width: 240px;
-                  height: 50px;
-                }
-                tr:nth-child(even) {
-                  background-color: white;
-                }
-                tr:nth-child(odd) {
-                  background-color: grey;
-                }
-                .date {
-                  text-align: center;
-                }
-                .completed-col {
-                  text-align: center;
-                  width: 40px !important;
-                }
-                .collapse-list {
-                  cursor: pointer;
-                }
-                .collapse-text {
-                  margin-left: 10px;
-                  float: left;
-                }
-                .plus-sign {
-                  margin-right: 10px;
-                  float: right;
-                }
-                .long-mailing-info {
-                  display: none;
-                  border: none;
-                  height: auto;
-                  width: auto;
-                }
-                .align-table {
-                  margin: 0px auto;
-                }
-                .form-move {
-                  padding-top: 100px;
-                }
-              </style>
-
-              <!-- Table JavaScript -->
-              <script type="text/javascript">
-                function dropDown(index) {
-                  let collapseTd = document.getElementsByClassName("collapse-list");
-                  let mailingInfo = document.getElementsByClassName("long-mailing-info");
-
-                  if (collapseTd[index].children[1].innerHTML === "+") {
-                    mailingInfo[index].style.display = "block";
-                    collapseTd[index].children[1].innerHTML = "-";
-                  } else {
-                    mailingInfo[index].style.display = "none";
-                    collapseTd[index].children[1].innerHTML = "+";
-                  }
-
-                }
-              </script>
-
               <!-- Output Table -->
               <div class="align-table">
                 <?php
