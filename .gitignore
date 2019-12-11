@@ -8,3 +8,4 @@ includes/psl-config.php
 test.php
 gator.html
 cgi-bin
+vendor/
