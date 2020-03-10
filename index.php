@@ -1,9 +1,3 @@
-<?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
-
-sec_session_start();
- ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,16 +68,11 @@ sec_session_start();
                         <a class="page-scroll" href="#volunteer">Volunteer</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#impact">Impact</a>
+                      <a class="page-scroll" href="#donors">Donors</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#donors">Donors</a>
+                        <a class="page-scroll" href="#impact">Impact</a>
                     </li>
-                    <?php if (login_check($mysqli) == true) : ?>
-                      <li>
-                          <a class="page-scroll" href="./includes/logout.php">Logout</a>
-                      </li>
-                    <?php endif; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -98,9 +87,8 @@ sec_session_start();
                 <div class="row row-spacing">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading transform-reset">See3D</h1>
-                        <p class="intro-text longText">A community-driven effort to bring
-                          3D printed models into the hands of the blind and low vision.</p>
-                        <p class="intro-text smallText">A community effort to bring 3D models into the hands of the blind.</p>
+                        <p class="intro-text longText">A non-profit organization that manages the printing and distribution of 3D printed models for people who are blind.</p>
+                        <p class="intro-text smallText">A non-profit organization that manages the printing and distribution of 3D printed models for people who are blind.</p>
                     </div>
 					<div class="slideshow-container">
 						<div class="mySlides">
@@ -212,21 +200,11 @@ sec_session_start();
                   Anyone who is blind/has low vision, or is a parent or teacher of someone who is blind, can make a request for a model.
                 </p>
                 <p>
-                  Through touch, people who are blind can have a better understanding of what an object looks like.
-                  Common requests are for maps, buildings, snowflakes, molecules, animals and automobiles.
-                  3D printing does not just benefit those who are blind, it benefits everyone because handling a tactile model opens opportunities to discover something new things that may not have been as noticeable in a picture, or verbal description.
-                </p>
-                <p>
-                  Our mission is to connect people who are blind and sighted through 3D printing, so all can gain new perspectives.
-                  Our programs also include spreading awareness on the importance accessible materials, including braille.
-                  Our models frequently include braille labels and descriptions, so people who are blind can explore and understand their model independently.
-                </p>
-                <p>
                   If you would like to support our mission, you can donate to our GoFundMe
                   <a href="https://www.gofundme.com/see3d"> Here</a>.
                 </p>
                 <div class="button-box">
-                  <a href="https://www.gofundme.com/see3d" class="btn btn-default btn-lg" id="goFundMe" onclick="unFocus('goFundMe')">About</a>
+                  <a href="pages/about.php" class="btn btn-default btn-lg" id="goFundMe" onclick="unFocus('goFundMe')">About</a>
                 </div>
 				        <div class="article-padding longText"></div>
             </div>
@@ -245,24 +223,45 @@ sec_session_start();
                       <a href="mailto:info@see3d.org">info@see3d.org</a>.
                       if you want to get involved!
                     </p>
+                    <div class="button-box">
+                      <a href="pages/getinvolved.php" class="btn btn-default btn-lg" id="goFundMe" onclick="unFocus('goFundMe')">More Info</a>
+                    </div>
           					<div class="article-padding longText"></div>
       				    </div>
             </div>
         <!-- </div> -->
     </section>
 
+    <!-- Donate Section -->
+    <section id="donate" class="content-section text-center section-padding-change">
+      <!-- <div class="download-section"> -->
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Donate to See3D</h2>
+                <p>Being a tax-exempt, non-profit 501(c)(3) organization, all donations are tax deductible.</p>
+                <p>You can donate financially using GoFundMe <a href="https://www.gofundme.com/see3d">here</a></p>
+                <p>We can accept in-kind donations including, but not limited to:</p>
+                <ul>
+                  <li>3D printers</li>
+                  <li>3D printing supplies (PLA and ABS filament, build plates, STL files)</li>
+                  <li>3D printed models (including previous See3D requests)</li>
+                  <li>Braille writing equipment (braillewriters, slates, styluses, embossers, transcribing software)</li>
+                  <li>Braille paper (including label stickers)</li>
+                </ul>
+                <br>
+                <p>Please email us at <a href="mailto:info@see3d.org">info@see3d.org</a> for more information.</p>
+                <div class="article-padding longText"></div>
+              </div>
+        </div>
+      <!-- </div> -->
+    </section>
+
     <!-- Model Request -->
     <section id="model-request" class="container content-section text-center section-padding-change">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-              <div class="article-padding longText"></div>
                 <h2>Request a Model Today</h2>
-                <p>If you have previously requested a model, we ask that you only request a maximum of one model per week. Model requests that are suspected to be non-legitmate are subject to be cancelled.</p>
                 <p class="longText">If you would like to request a model today, follow the link below to start the process of requesting a model.</p>
-                <p>Note: See3D is not responsible for any possible injuries from the models, such as choking from broken pieces.
-                  We also cannot guarantee the accuracy of the models in their representation of real life objects.
-                  Please keep this is mind before placing a request.
-                </p>
                 <div class="button-box">
         					<a href="https://goo.gl/forms/utZh2VDY9EFYiwu32" class="btn btn-default btn-lg" id="requestButton" onclick="unFocus('requestButton')">Request a Model</a>
         				</div>
