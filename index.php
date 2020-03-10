@@ -263,7 +263,7 @@
                 <h2>Request a Model Today</h2>
                 <p class="longText">If you would like to request a model today, follow the link below to start the process of requesting a model.</p>
                 <div class="button-box">
-        					<a href="https://goo.gl/forms/utZh2VDY9EFYiwu32" class="btn btn-default btn-lg" id="requestButton" onclick="unFocus('requestButton')">Request a Model</a>
+        					<a href="pages/request.php" class="btn btn-default btn-lg" id="requestButton" onclick="unFocus('requestButton')">Request a Model</a>
         				</div>
   					    <div class="article-padding longText"></div>
             </div>
